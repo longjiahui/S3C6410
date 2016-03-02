@@ -1,0 +1,12 @@
+.global _start
+_start:
+    //tell the peripheral
+    ldr r0,0x70000000
+    orr r0,r0,#13
+    
+    //turn off the watch dog
+    ldr r0,=..
+    mov r1,#0
+    str r1,[r0]
+    
+    //
